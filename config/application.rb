@@ -5,6 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load unless ['production', 'staging'].include?(Rails.env)
 
 module UntitledRailsProject
   class Application < Rails::Application
