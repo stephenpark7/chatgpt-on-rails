@@ -1,0 +1,121 @@
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: rgb(32, 33, 35);
+  padding: 1em;
+}
+.chat-container {
+  background: rgb(68, 70, 84);
+  padding: 1em;
+  border: 1px solid #222;
+  border-radius: 1em;
+  height: calc(100% - 3.75em);
+  overflow-y: scroll;
+}
+.chat-input-container {
+  background: rgb(68, 70, 84);
+  margin-top: 16px;
+  padding: 0.5em;
+  border: 1px solid #222;
+  border-radius: 0.375em;
+}
+.chat-input-textarea {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: ui-sans-serif, system-ui;
+  font-size: 14px;
+  overflow-y: hidden;
+  resize: none;
+  height: 24px;
+}
+.message {
+  font-family: ui-sans-serif, system-ui;
+  font-size: 14px;
+  color: #CCC;
+}
+.message-author {
+  font-weight: bold;
+  font-family: ui-sans-serif, system-ui;
+  font-size: 14px;
+  color: #CCC;
+}
+.message-author::after {
+  content: ':';
+}
+</style>
+
+<div class='chat-container'>
+  <% @messages.each do |message| %>
+    <span class='message-author'><%= message.user.name %></span><p class='message'><%= message.content %></p>
+  <% end %>
+</div>
+<div class='chat-input-container'>
+  <textarea class='chat-input-textarea'></textarea>
+</div>
+
+<script>
+  const textArea = document.querySelector('.chat-input-textarea');
+  const chatContainer = document.querySelector('.chat-container');
+
+  addEventListener('DOMContentLoaded', () => {
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  });
+  
+  textArea.addEventListener('keyup', () => {
+    const lines = textArea.value.split(/\n/);
+    const numberOfLines = lines.length;
+    container = document.querySelector('.chat-input-container');
+    textarea = document.querySelector('.chat-input-textarea');
+    if (numberOfLines > 5) return;
+    container.style.cssText = `margin-top: ${(16 + (numberOfLines - 1) * -18)}px;`
+    textarea.style.cssText = `height: ${(24 + (numberOfLines - 1) * 18)}px;`;
+  });
+
+  textArea.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      const content = textArea.value;
+      textArea.value = '';
+      textArea.style.cssText = `height: 24px;`;
+      container = document.querySelector('.chat-input-container');
+      container.style.cssText = `margin-top: 16px;`
+      //
+      addMessage('You', content);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      // Fetch to send message to our server
+      const response = fetch('/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: { content } })
+      });
+      response.then((response) => {
+        return response.json();
+      }).then((data) => {
+        if (data.message) {
+          addMessage('<%= @chatgpt.name %>', data.message);
+        }
+      });
+    }
+  });
+
+  const addMessage = (name, message) => {
+    span = chatContainer.appendChild(document.createElement('span'));
+    span.innerHTML = `
+      <span class='message-author'>${name}</span><p class='message'>${message}</p>
+    `;
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  };
+</script>
