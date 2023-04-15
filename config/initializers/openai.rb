@@ -6,7 +6,6 @@ class ChatGPT
   OpenAI.configure do |config|
     config.access_token = ENV.fetch('OPENAI_API_KEY')
     @client = OpenAI::Client.new
-    # client.models.retrieve(id: "gpt-3.5-turbo")
   end
 
   def self.get_client

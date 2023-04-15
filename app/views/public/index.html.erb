@@ -34,24 +34,44 @@ body {
   outline: none;
   color: white;
   font-family: ui-sans-serif, system-ui;
-  font-size: 14px;
+  font-size: 1em;
   overflow-y: hidden;
   resize: none;
   height: 24px;
 }
-.message {
-  font-family: ui-sans-serif, system-ui;
-  font-size: 14px;
-  color: #CCC;
-}
 .message-author {
   font-weight: bold;
   font-family: ui-sans-serif, system-ui;
-  font-size: 14px;
+  font-size: 1em;
   color: #CCC;
+}
+.message {
+  font-family: ui-sans-serif, system-ui;
+  font-size: 1em;
+  color: #CCC;
+
+  white-space: pre-wrap;                
+  line-height: 2em;
+  position: relative;
+  top:-15px;
 }
 .message-author::after {
   content: ':';
+}
+@media (min-width: 1000px) {
+  .chat-container {
+    font-size: 2em;
+  }
+}
+@media (min-width: 1000px) {
+  .chat-container {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1000px) {
+  .chat-container {
+    font-size: 1em;
+  }
 }
 </style>
 
@@ -90,10 +110,7 @@ body {
       textArea.style.cssText = `height: 24px;`;
       container = document.querySelector('.chat-input-container');
       container.style.cssText = `margin-top: 16px;`
-      //
       addMessage('You', content);
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-      // Fetch to send message to our server
       const response = fetch('/messages', {
         method: 'POST',
         headers: {
