@@ -39,6 +39,8 @@ body {
 }
 
 .chat-input-container {
+  position: relative;
+  z-index: 10;
   background: rgb(68, 70, 84);
   margin-top: 16px;
   padding: 0.5em;
