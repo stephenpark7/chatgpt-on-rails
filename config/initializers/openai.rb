@@ -19,6 +19,8 @@ class ChatGPT
           messages: [{ role: "user", content: content }],
           temperature: 0.7,
       })
+    error = response['error']
+    raise error['message'] if error
     response.dig("choices", 0, "message", "content")
   end
 end
