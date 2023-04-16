@@ -11,7 +11,7 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
-  "name": "untitled-rails-project",
+  "name": "chatgpt-on-rails",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephen-ctd/untitled-rails-project.git"
+    "url": "git+https://github.com/stephenpark7/chatgpt-on-rails.git"
   },
-  "author": "",
+  "author": "Stephen Park",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stephen-ctd/untitled-rails-project/issues"
+    "url": "https://github.com/stephenpark7/chatgpt-on-rails/issues"
   },
-  "homepage": "https://github.com/stephen-ctd/untitled-rails-project#readme"
+  "homepage": "https://github.com/stephenpark7/chatgpt-on-rails#readme"
 }
