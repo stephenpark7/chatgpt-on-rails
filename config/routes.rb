@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  post 'messages', to: 'public#send_message'
+
+  namespace :api do
+    post 'messages', to: 'public#send_message'
+  end
+
   root 'public#index'
+  
 end

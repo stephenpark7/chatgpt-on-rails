@@ -25,8 +25,9 @@ body {
 }
 
 body {
-  background: rgb(32, 33, 35);
   padding: 1em;
+  background: rgb(32, 33, 35);
+  color: #CCC;
 }
 
 .chat-container {
