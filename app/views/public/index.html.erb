@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag "application" %>
 
 <div class='chat-container'>
-  <% @messages.each do |message| %>
-    <div class="message-container">
-      <p class='message-author'><%= message.user.name %></p>
-      <p class='message-content'><%= message.content %></p>
-    </div>
-  <% end %>
+  <div class='messages'>
+    <% @messages.each do |message| %>
+      <div class="message-container">
+        <p class='message-author'><%= message.user.name %></p>
+        <p class='message-content'><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class='chat-input-container'>
   <textarea class='chat-input-textarea'></textarea>

@@ -63,27 +63,23 @@ body {
   height: 24px;
 }
 
+.messages { 
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
 .message-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
 }
 
 .message-author {
   display: inline-block;
-  margin: 0;
+  margin: 0 0 0.2em 0;
   font-weight: bold;
   font-family: ui-sans-serif, system-ui;
   font-size: 1em;
-  color: #CCC;
-}
-
-.message-content {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui;
-  font-size: 1em;
-  line-height: 2em;
-  white-space: pre-wrap;
   color: #CCC;
 }
 
@@ -91,20 +87,10 @@ body {
   content: ':';
 }
 
-@media (min-width: 1000px) {
-  .chat-container {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1000px) {
-  .chat-container {
-    font-size: 1.5em;
-  }
-}
-
-@media (min-width: 1000px) {
-  .chat-container {
-    font-size: 1em;
-  }
+.message-content {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui;
+  font-size: 1em;
+  white-space: pre-wrap;
+  color: #CCC;
 }

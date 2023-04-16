@@ -7,10 +7,11 @@ class PublicController < ActionController::Base
     @chatgpt = User.second
   end
 
-  def messages
-    message = params[:message][:content].gsub(/^\n+/, '') # Remove leading newlines
+  def send_message
+    message = params[:message][:content]
+    message = remove_leading_newlines(message)
     head 400 && return if message.nil?
-    # SendMessageJob.perform_later(content)
+    # TODO: SendMessageJob.perform_later(content)
     Message.create!(user: User.first, content: message) # User
 
     prompt = 'You are ChatGPT. '
@@ -23,8 +24,21 @@ class PublicController < ActionController::Base
       prompt += m.content + '\n'
     end
     prompt += 'ChatGPT: '
-    response = ChatGPT.send_message(prompt)
+
+    if !Config::DUMMY_RESPONSES
+      response = ChatGPT.send_message(prompt)
+    else 
+      response = "DUMMY RESPONSE"
+    end
+
     Message.create!(user: User.second, content: response) # ChatGPT
     render json: { message: response }
   end
+
+private
+
+  def remove_leading_newlines(content)
+    content.gsub(/^\n+/, '')
+  end
+
 end
