@@ -1,2 +1,4 @@
 TODO:
-☐ Look into fine-tuning the model to improve the accuracy of the predictions.
+☐ Clear chat history
+☐ Save chat history
+☐ Set different indentities (other than ChatGPT)
