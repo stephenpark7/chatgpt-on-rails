@@ -1,24 +1,11 @@
-# README
+# Tech stack
+- React (Front-end)
+- Ruby on Rails (Back-end)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Dependencies
+- Ruby OpenAI
+- Webpacker
+- Tailwind CSS
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Running the app
+`yarn start`
