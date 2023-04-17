@@ -23,7 +23,8 @@
     "webpack-dev-server": "^3"
   },
   "scripts": {
-    "start": "./bin/dev"
+    "start": "rails s",
+    "dev": "./bin/dev && ./bin/webpack-dev-server"
   },
   "repository": {
     "type": "git",
