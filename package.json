@@ -20,12 +20,17 @@
     "test": "test"
   },
   "devDependencies": {
+    "@types/react": "^18.0.37",
     "concurrently": "^8.0.1",
+    "typescript": "^5.0.4",
     "webpack-dev-server": "^3"
   },
   "scripts": {
     "start": "rails s -p 3000",
-    "dev": "concurrently \"./bin/dev\" \"./bin/webpack-dev-server\""
+    "bin-dev": "./bin/dev",
+    "hot-reload": "./bin/webpack-dev-server",
+    "tsw": "npx tsc --watch",
+    "dev": "concurrently \"npm run bin-dev\" \"npm run hot-reload\""
   },
   "repository": {
     "type": "git",

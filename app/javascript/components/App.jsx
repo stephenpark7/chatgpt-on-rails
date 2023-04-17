@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AppContext } from "../lib/context";
+import { AppContext } from "../lib/context.tsx";
 import { AppRoutes } from "../routes";
 
 export const App = () => {
