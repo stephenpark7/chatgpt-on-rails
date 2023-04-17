@@ -20,11 +20,12 @@
     "test": "test"
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "webpack-dev-server": "^3"
   },
   "scripts": {
-    "start": "rails s",
-    "dev": "./bin/dev && ./bin/webpack-dev-server"
+    "start": "rails s -p 3000",
+    "dev": "concurrently \"./bin/dev\" \"./bin/webpack-dev-server\""
   },
   "repository": {
     "type": "git",
