@@ -31,7 +31,7 @@ const Home = () => {
     return (<div>
       <h1 className="text-3xl font-bold underline">
         Hello!
-        {/* Hello {userContext.user.name}! */}
+        Hello {userContext.user.name}!
       </h1>
     </div>);
 };
