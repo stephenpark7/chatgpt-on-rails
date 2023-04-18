@@ -7,6 +7,14 @@ export const defaultUserData = {
   access_token: '',
 }
 
+type UserData = {
+  id: string;
+  name: string;
+  email: string;
+  access_token: string;
+};
+
 export const AppContext = createContext({
   user: defaultUserData,
+  setUser: (_state: UserData) => {},
 });

@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    // "declaration": false,
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
     "esModuleInterop": true,
-    "noEmit": true,
-    "skipLibCheck": true,
+    // "noEmit": true,
+    // "skipLibCheck": true,
 
     /* Type Checking */
     "strict": true,                                      /* Enable all strict type-checking options. */
-    "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
     // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
@@ -31,12 +31,12 @@
     // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
     // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
   },
-  "exclude": [
-    "**/*.d.ts",
-    "**/*.spec.ts",
-    "node_modules",
-    "vendor",
-    "public"
-  ],
-  "compileOnSave": false,
+  // "exclude": [
+  //   "**/*.d.ts",
+  //   "**/*.spec.ts",
+  //   "node_modules",
+  //   "vendor",
+  //   "public"
+  // ],
+  // "compileOnSave": false,
 }

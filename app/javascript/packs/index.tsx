@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { App } from '../components/App';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = createRoot(document.querySelector('#root'));
+  const rootElement = document.querySelector('#root') as HTMLElement;
+  const root = createRoot(rootElement);
   root.render(
     <App />
   );
