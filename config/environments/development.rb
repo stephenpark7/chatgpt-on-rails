@@ -71,4 +71,9 @@ Rails.application.configure do
   config.hosts << /[a-z0-9]+\.ngrok\.io/
 
   # config.assets.compile = true
+
+  # config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/builds")
+
+  config.hotwire_livereload.force_reload_paths << Rails.root.join("app/assets/stylesheets")
+  config.hotwire_livereload.force_reload_paths << Rails.root.join("app/javascript")
 end
