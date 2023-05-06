@@ -7,7 +7,10 @@ export const App = () => {
   const [ user, setUser ] = useState(userContext.user);
 
   return (
-    <AppContext.Provider value={{ user: user, setUser: setUser }}>
+    <AppContext.Provider value={{ 
+      user: user, 
+      setUser: setUser 
+    }}>
       <AppRoutes />
     </AppContext.Provider>
   );

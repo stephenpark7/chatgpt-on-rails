@@ -5,7 +5,8 @@ module.exports = {
     './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*',
-    './app/views/**/*'
+    './app/views/**/*',
+    './app/assets/stylesheets/**/*'
   ],
   theme: {
     extend: {

@@ -2,13 +2,12 @@ import React, { useContext } from 'react';
 import { AppContext } from "../lib/context";
 
 export const Home = () => {
-  const userContext = useContext(AppContext);
+  // const userContext = useContext(AppContext);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello!
-        Hello {userContext.user.name}!
+    <div className="flex items-center justify-center pt-5">
+      <h1 className="text-4xl font-bold underline">
+        ChatGPT on Rails
       </h1>
     </div>
   );
