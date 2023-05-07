@@ -14,9 +14,15 @@
  *= require_self
  */
 
+:root {
+  --SHARK  : #282C34;
+  --SILVER : #CCCCCC;
+}
+
 html,
 body {
   margin: 0;
+  padding: 0;
   height: 100%;
 }
 
@@ -25,9 +31,8 @@ body {
 }
 
 body {
-  padding: 1em;
-  background: rgb(32, 33, 35);
-  color: #CCC;
+  background: var(--SHARK);
+  color: var(--SILVER);
 }
 
 /* .chat-container {
