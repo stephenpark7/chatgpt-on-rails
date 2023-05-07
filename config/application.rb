@@ -7,7 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load unless ['production', 'staging'].include?(Rails.env)
 
-module UntitledRailsProject
+module ChatGPTOnRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -19,5 +19,6 @@ module UntitledRailsProject
     #
     config.time_zone = "Eastern Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.sass.preferred_syntax = :sass
   end
 end
