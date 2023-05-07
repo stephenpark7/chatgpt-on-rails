@@ -7,7 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load unless ['production', 'staging'].include?(Rails.env)
 
-module ChatGPTOnRails
+module ChattyAI
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
