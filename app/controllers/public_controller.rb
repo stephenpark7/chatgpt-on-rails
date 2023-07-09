@@ -1,6 +1,6 @@
 class PublicController < ActionController::Base
   
-  layout 'application'
+  layout "application"
 
   def index
   end

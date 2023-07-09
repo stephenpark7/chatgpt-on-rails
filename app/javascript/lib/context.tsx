@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
 export const defaultUserData = {
-  id: '',
-  name: '',
-  email: '',
-  access_token: '',
+  id: "",
+  name: "",
+  email: "",
+  access_token: "",
 }
 
 type UserData = {

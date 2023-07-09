@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    post 'messages', to: 'public#send_message'
+    post "messages", to: "public#send_message"
   end
 
-  root 'public#index'
+  get "/*path", to: "public#index"
+
+  root "public#index"
   
 end
